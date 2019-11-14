@@ -2,7 +2,7 @@
 
 namespace RGR10
 {
-    class Vector1D
+    public class Vector1D
     {
         public double x = 0;
 
@@ -24,7 +24,7 @@ namespace RGR10
             return vector1.x * vector2.x;
         }
 
-        public double Length()
+        public virtual double Length()
         {
             return Math.Abs(x);
         }

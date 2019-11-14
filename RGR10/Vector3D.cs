@@ -2,7 +2,7 @@
 
 namespace RGR10
 {
-    class Vector3D : Vector2D
+    public class Vector3D : Vector2D
     {
         public double z = 0;
         
@@ -29,9 +29,14 @@ namespace RGR10
             Vector3D vector3 = new Vector3D(vector1.y * vector2.z - vector1.z * vector2.y, vector1.z * vector2.x - vector1.x * vector2.z, vector1.x * vector2.y - vector1.y * vector2.x);
             return vector3;
         }
-        public new double Length()
+        public override double Length()
         {
             return Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2));
+        }
+
+        public double AngleBetween(Vector3D vector2)
+        {
+            return (this * vector2) / (Length() * vector2.Length());
         }
 
         public override string ToString()

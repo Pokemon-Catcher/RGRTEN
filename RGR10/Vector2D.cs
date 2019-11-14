@@ -2,7 +2,7 @@
 
 namespace RGR10
 {
-    class Vector2D : Vector1D
+    public class Vector2D : Vector1D
     {
         public double y = 0;
 
@@ -25,14 +25,14 @@ namespace RGR10
             return vector1.x * vector2.x + vector1.y * vector2.y;
         }
 
-        public new double Length()
+        public override double Length()
         {
             return Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
         }
 
         public double AngleBetween(Vector2D vector2)
         {
-            return (this * vector2) / (this.Length() * vector2.Length());
+            return (this * vector2) / (Length() * vector2.Length());
         }
 
         public override string ToString()
